@@ -78,7 +78,25 @@ document.querySelectorAll(".btn").forEach(btn => {
         btn.style.transform = "scale(1)";
 
     });
+const slides = document.querySelectorAll(".slide");
 
+let current = 0;
+
+function changeSlide(){
+
+slides[current].classList.remove("active");
+
+current++;
+
+if(current >= slides.length){
+current = 0;
+}
+
+slides[current].classList.add("active");
+
+}
+
+setInterval(changeSlide,4000);
 });
 
 
